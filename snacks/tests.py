@@ -7,8 +7,8 @@ from .models import Snack
 class SnacksTest(TestCase):
 
     def setUp(self):
-        reviewer = get_user_model().objects.create(username="tester",password="tester")
-        Snack.objects.create(name="tester", purchaser=reviewer)
+        purchaser = get_user_model().objects.create(username="tester",password="tester")
+        Snack.objects.create(title="tester", purchaser=purchaser)
 
     def test_home_page_status(self):
         url = reverse('snack_list')
